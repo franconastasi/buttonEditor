@@ -19,7 +19,6 @@ $text = explode('|',$text);
 $text_setting = array();
 
 switch ($m =count($text)) {
-    case 5:
     case 4:
         $text[3] = 10;
         $text[4] = 20;
@@ -37,24 +36,9 @@ switch ($m =count($text)) {
         break;
 }
 
-/*
-$text_setting['size'] =  20;
-$text_setting['xpos'] = 10;
-$text_setting['ypos'] = 20;
-$text_setting['font'] = './OpenSans-BoldItalic.ttf';
-$text_setting['str'] = 'Drakaris';
-
-
-$font = './OpenSans-BoldItalic.ttf';
-$text = 'Drakaris';
-*/
-
-//$textprop = imagettftext($img, 20, 0, 10, 20, $black, $font, $text);
-
+//Imprimir texto
+//Falta agregar opción para cambiar el color;
 $textprop = imagettftext($img, $text_setting['size'] , 0, $text_setting['xpos'], $text_setting['ypos'], $black, $text_setting['font'], $text_setting['str']);
-
-
-
 
 
 
@@ -99,75 +83,4 @@ imagepng($thumb);imagedestroy($thumb);
 
 
 
-
-
-
-
-
-/*****************************************************************************/
-/*
-// Set the content-type
-header('Content-Type: image/png');
-
-
-// Create the image
-$def_src = 'http://www.ign.gob.ar/sites/default/files/logo2012blanco.png';
-$src = isset($_GET['src'])? $_GET['src'] : $def_src;
-$im = imagecreatefrompng($src);
-//$im = imagecreatetruecolor(400, 30);
-
-// Create some colors
-$white = imagecolorallocate($im, 255, 255, 255);
-$grey = imagecolorallocate($im, 128, 128, 128);
-$black = imagecolorallocate($im, 0, 0, 0);
-//imagefilledrectangle($im, 0, 0, 399, 29, $white);
-
-// The text to draw
-$text = 'Testing...';
-// Replace path by your own font path
-//$font Italic.ttf';
-//= './OpenSans-Bold
-// Add some shadow to the text
-$font = './OpenSans-BoldItalic.ttf';
-$shadow = imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
-
-// Add the text
-$textprop = imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
-
-// Using imagepng() results in clearer text compared with imagejpeg()
-imagepng($im);
-imagedestroy($im);
-*/
-/*********************************************************************/
-
-
-/*
-
-
-*/
-
-
-/*
-// Load the stamp and the photo to apply the watermark to
-$stamp = imagecreatefrompng('images/logo2012blanco.png');
-$im = imagecreatefromjpeg('images/paisaje.jpg');
-
-// Set the margins for the stamp and get the height/width of the stamp image
-$marge_right = 10;
-$marge_bottom = 10;
-$sx = imagesx($stamp);
-$sy = imagesy($stamp);
-
-// Copy the stamp image onto our photo using the margin offsets and the photo 
-// width to calculate positioning of the stamp. 
-imagecopy($im, $stamp, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($stamp), imagesy($stamp));
-
-$to = 'simpleText.jpg';
-
-// Output and free memory
-imagejpeg($im, 'simpletext.jpg');
-
-imagejpeg($im);
-imagedestroy($im);
-*/
 ?>
