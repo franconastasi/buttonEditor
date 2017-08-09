@@ -1,96 +1,71 @@
 <?php
 
-/*
-header("Content-type: image/jpg");
-$string = $_GET['text'];
-$im     = imagecreatefromjpeg("images/button2.jpg");
-$orange = imagecolorallocate($im, 220, 210, 60);
-//$px     = (imagesx($im) - 7.5 * strlen($string)) / 2;
-//$py     = (imagesy($im) - 7.5 * strlen($string)) / 2;
-$px = 370;
-$py = 50;
-
-//imagestring($im, 5, $px, $py, $string, $orange);
-$size = 30;
-$angle = 0;
-$black = imagecolorallocate($im, 0, 0, 0);
-$fontfile = './OpenSans-BoldItalic.ttf';
-imagettftext( $im,  $size ,  $angle ,  $px ,  $py ,  $black ,  $fontfile ,  $string);
-
-imagepng($im);
-imagedestroy($im);
-
-*/
-
-
-// Set the content-type
-header('Content-Type: image/png');
-
- 
-// Create the image
-$im = imagecreatetruecolor(400, 30);
-
-// Create some colors
-$white = imagecolorallocate($im, 255, 255, 255);
-$grey = imagecolorallocate($im, 128, 128, 128);
-$black = imagecolorallocate($im, 0, 0, 0);
-imagefilledrectangle($im, 0, 0, 399, 29, $white);
-
-// The text to draw
-$text = 'Testing...';
-// Replace path by your own font path
-$font = './OpenSans-BoldItalic.ttf';
-
-// Add some shadow to the text
-$shadow = imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
-
-// Add the text
-$textprop = imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
-
-// Using imagepng() results in clearer text compared with imagejpeg()
-imagepng($im);
-imagedestroy($im);
-
-
-/*
 header('Content-type: image/png');
-
-// ?src=www.aaaa&s=
 
 $def_src = 'http://www.ign.gob.ar/sites/default/files/logo2012blanco.png';
 $src = isset($_GET['src'])? $_GET['src'] : $def_src;
 $img = imagecreatefrompng($src);
-list($width, $height) = getimagesize($img);
 
+
+$white = imagecolorallocate($img, 255, 255, 255);
+$grey = imagecolorallocate($img, 128, 128, 128);
+$black = imagecolorallocate($img, 0, 0, 0);
+
+
+
+//Obtención parámetros para texto
 $text = isset($_GET['stext']) ? $_GET['stext'] : "";
 $text = explode('|',$text);
 $text_setting = array();
 
+switch ($m =count($text)) {
+    case 5:
+    case 4:
+        $text[3] = 10;
+        $text[4] = 20;
+    case 5:
+        $text_setting['xpos'] = $text[3];
+        $text_setting['ypos'] = $text[4];
+    case 3:
+        $text_setting['str'] = $text[0];
+        $text_setting['font'] = $text[1];
+        $text_setting['size'] =  $text[2];
+        break;
+    default:
+        $text_setting['str'] = "";
+        $text_setting['size'] = 0;
+        break;
+}
+
 /*
-$text_setting['size'] =  $text[0];
-$text_setting['angle'] = $text[1];
-$text_setting['xpos'] =  $text[2];
-$text_setting['ypos'] = $text[3];
-//$text_setting['color'] = $text[4]; 
-$text_setting['color'] = imagecolorallocate($im, 255, 255, 255);
-$text_setting['font'] = $text[4];
-$text_setting['str'] = $text[5];
+$text_setting['size'] =  20;
+$text_setting['xpos'] = 10;
+$text_setting['ypos'] = 20;
+$text_setting['font'] = './OpenSans-BoldItalic.ttf';
+$text_setting['str'] = 'Drakaris';
+
+
+$font = './OpenSans-BoldItalic.ttf';
+$text = 'Drakaris';
 */
 
-/*
-$white = imagecolorallocate($im, 255, 255, 255);
-$font = './OpenSans-BoldItalic.ttf';
-$text = 'Testing...';
-$textprop = imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
+//$textprop = imagettftext($img, 20, 0, 10, 20, $black, $font, $text);
+
+$textprop = imagettftext($img, $text_setting['size'] , 0, $text_setting['xpos'], $text_setting['ypos'], $black, $text_setting['font'], $text_setting['str']);
 
 
-//$textprop = imagettftext($img,$text_setting['size'], $text_setting['angle'], $text_setting['xpos'], $text_setting['ypos'], $text_setting['color'], $text_setting['font'],$text_setting['str']);
 
+
+
+
+
+//obtención parametros para resize
 
 $setting = isset($_GET['s']) ? $_GET['s'] : "fff|fff|$width|$height";
 $setting = explode('|', $setting);
 $img_setting = array();
-$img;
+
+
 
 switch ($n = count($setting)) {
     case $n > 4 :
@@ -108,17 +83,63 @@ switch ($n = count($setting)) {
         break;
 }
 
-
+// Genera imagen transparente con nuevo alto y ancho
 list($width, $height) = getimagesize($src);
 $thumb = imagecreatetruecolor($img_setting['width'], $img_setting['height']);
+imagesavealpha($thumb, true);
+$trans_colour = imagecolorallocatealpha($thumb, 0, 0, 0, 127);
+imagefill($thumb, 0, 0, $trans_colour);
 
-// http://code.runnable.com/UnF-tFdudNt1AABt/how-to-resize-an-image-using-gd-library-for-php
-// Resize
+//resize
 imagecopyresized($thumb, $img, 0, 0, 0, 0, $img_setting['width'], $img_setting['height'], $width, $height);
 
 
-imagepng($thumb);
-imagedestroy($img);
+//creación y destrucción de la imagen
+imagepng($thumb);imagedestroy($thumb);
+
+
+
+
+
+
+
+
+/*****************************************************************************/
+/*
+// Set the content-type
+header('Content-Type: image/png');
+
+
+// Create the image
+$def_src = 'http://www.ign.gob.ar/sites/default/files/logo2012blanco.png';
+$src = isset($_GET['src'])? $_GET['src'] : $def_src;
+$im = imagecreatefrompng($src);
+//$im = imagecreatetruecolor(400, 30);
+
+// Create some colors
+$white = imagecolorallocate($im, 255, 255, 255);
+$grey = imagecolorallocate($im, 128, 128, 128);
+$black = imagecolorallocate($im, 0, 0, 0);
+//imagefilledrectangle($im, 0, 0, 399, 29, $white);
+
+// The text to draw
+$text = 'Testing...';
+// Replace path by your own font path
+//$font Italic.ttf';
+//= './OpenSans-Bold
+// Add some shadow to the text
+$font = './OpenSans-BoldItalic.ttf';
+$shadow = imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
+
+// Add the text
+$textprop = imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
+
+// Using imagepng() results in clearer text compared with imagejpeg()
+imagepng($im);
+imagedestroy($im);
+*/
+/*********************************************************************/
+
 
 /*
 
