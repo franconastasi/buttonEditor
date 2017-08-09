@@ -42,6 +42,7 @@ $textprop = imagettftext($img, $text_setting['size'] , 0, $text_setting['xpos'],
 
 
 //obtención parametros para resize
+
 list($width, $height) = getimagesize($src);
 
 $setting = isset($_GET['s']) ? $_GET['s'] : "fff|fff|$width|$height";
