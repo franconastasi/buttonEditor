@@ -11,6 +11,9 @@
 
 <img src="button.php?s=asdsad|asdas|800|600&stext=Hello World|./OpenSans-BoldItalic.ttf|30|100|200">
 
+<img src="button.php?">
+<img src="button.php?src=C:\Users\Fnastasi\Documents\logo2012blanco.png">
+
 </body>
 </html>
 

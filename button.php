@@ -37,13 +37,12 @@ switch ($m =count($text)) {
 }
 
 //Imprimir texto
-//Falta agregar opción para cambiar el color;
+//Falta agregar opción para cambiar el color del texto;
 $textprop = imagettftext($img, $text_setting['size'] , 0, $text_setting['xpos'], $text_setting['ypos'], $black, $text_setting['font'], $text_setting['str']);
 
 
-
-
 //obtención parametros para resize
+list($width, $height) = getimagesize($src);
 
 $setting = isset($_GET['s']) ? $_GET['s'] : "fff|fff|$width|$height";
 $setting = explode('|', $setting);
@@ -68,7 +67,7 @@ switch ($n = count($setting)) {
 }
 
 // Genera imagen transparente con nuevo alto y ancho
-list($width, $height) = getimagesize($src);
+
 $thumb = imagecreatetruecolor($img_setting['width'], $img_setting['height']);
 imagesavealpha($thumb, true);
 $trans_colour = imagecolorallocatealpha($thumb, 0, 0, 0, 127);
