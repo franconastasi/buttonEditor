@@ -1,3 +1,13 @@
+<?php 
+
+$_source = $_GET['source'];
+$_width =  $_GET['alto'] ;
+$_height = $_GET['ancho'];
+
+
+
+?>
+
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -17,9 +27,15 @@
 
 </style>
 
-</head>
 
+</head>
 <body >
+
+<?php
+echo "
+<img src='button.php?src=http://" . $_source . "&s=asdsad|asdas|" .$_width . "|" . $_height ."&" .
+"'>";
+?>
 
 <form id="mainForm" action="/gdTest/action_page.php">
   <fieldset>
@@ -33,28 +49,12 @@
     Nuevo ancho:<br>
     <input type="text" name="ancho">
     <br>
-	<div>
-		
-	</div>
 
     <br><br>
     <input type="submit" value="Submit">
   </fieldset>
 </form>
 
-
-
-<!--
-<img src='button.php?src=http://www.ign.gob.ar/2013/img/Mindef_curvas.png'>
-
-<img src="button.php?src=http://www.ign.gob.ar/2013/img/Mindef_curvas.png&s=asdsad|asdas|960|198&stext=Drakaris|./OpenSans-BoldItalic.ttf|20|10|20">
-
-<img src="button.php?s=asdsad|asdas|800|600&stext=Hello World|./OpenSans-BoldItalic.ttf|30|100|200">
-
-<img src="button.php?">
-<img src="button.php?src=logo2012blanco.png">
-
--->
 
 </body>
 </html>

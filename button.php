@@ -63,7 +63,7 @@ switch ($n = count($setting)) {
         $img_setting['background'] = $setting[0];
         break;
     default:
-        list($img_setting['background'],$img_setting['color'],$img_setting['width'],$img_setting['height']) = array('F','0',100,100);
+        list($img_setting['background'],$img_setting['color'],$img_setting['width'],$img_setting['height']) = array('F','0',$width,$height);
         break;
 }
 
