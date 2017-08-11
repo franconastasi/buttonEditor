@@ -81,6 +81,4 @@ imagecopyresized($thumb, $img, 0, 0, 0, 0, $img_setting['width'], $img_setting['
 //creación y destrucción de la imagen
 imagepng($thumb);imagedestroy($thumb);
 
-
-
 ?>

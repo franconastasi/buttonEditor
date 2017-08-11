@@ -27,22 +27,35 @@
     Origen:<br>
     <input id="org" type="text" name="source" value="www.ign.gob.ar/2013/img/Mindef_curvas.png">
     <br><br>
-    Nuevo Alto:<br>
+    Nuevo Ancho:<br>
     <input type="text" name="alto">
     <br><br>
-    Nuevo ancho:<br>
+    Nuevo Alto:<br>
     <input type="text" name="ancho">
-    <br>
+    <br><br>
+
 	<div>
-		
+		Texto:<br>
+		<input type="text" name="texto">
+		<br>
+		Tamaño:<br>
+		<input type="text" name="tamaño">
+		<br>
+		Fuente:<br>
+		<input type="text" name="fuente">
+		<br>
+		Posición X:<br>
+		<input type="text" name="posX"> 
+		<br>
+		Posición Y:<br>
+		<input type="text" name="posY">
+		<br>
 	</div>
 
     <br><br>
     <input type="submit" value="Submit">
   </fieldset>
 </form>
-
-
 
 <!--
 <img src='button.php?src=http://www.ign.gob.ar/2013/img/Mindef_curvas.png'>
