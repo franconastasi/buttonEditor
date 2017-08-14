@@ -1,8 +1,8 @@
 <?php 
 
 
-$_source = (isset($_GET['source']) ? $_GET['source'] : "");
-//$_source = $_GET['source'];
+//$_source = (isset($_GET['source']) ? $_GET['source'] : "www.ign.gob.ar/sites/default/files/logo2012blanco.png");
+$_source = $_GET['source'];
 $_width =  isset($_GET['alto']) ? $_GET['alto'] : "";
 $_height = isset($_GET['ancho']) ? $_GET['ancho'] : "";
 
@@ -13,6 +13,7 @@ $_str_font = (isset($_GET['fuente'])? $_GET['fuente'] : "");
 //$_str_font = $_GET['fuente'];
 $_str_posX = (isset($_GET['posX']) ? $_GET['posX'] : "");
 $_str_posY = (isset($_GET['posY']) ? $_GET['posY'] : "");
+$_str_color = (isset($_GET['color']) ? $_GET['color'] : "");
 
 ?>
 
@@ -40,8 +41,8 @@ $_str_posY = (isset($_GET['posY']) ? $_GET['posY'] : "");
 <?php
 echo "
 <p style='text-align: center;'>
-<img src='button.php?src=http://" . $_source . "&s=asdsad|asdas|" .$_width . "|" . $_height ."&" .
-"stext=" . $_str .  "|" . "./" . "$_str_font" . ".ttf" . "|" . $_str_size ."|" . $_str_posX . "|" . $_str_posY . "'>
+<img src='button.php?src=" . $_source . "&s=asdas|" .$_width . "|" . $_height ."&" .
+"stext=" . $_str .  "|" .  $_str_font . "|" . $_str_size ."|" . $_str_posX . "|" . $_str_posY . "|" . $_str_color .  "'>
 </p>
 
 ";
@@ -52,7 +53,7 @@ echo "
   <fieldset>
     <legend>Personal information:</legend>
     Origen:<br>
-    <input id=\"org\" type=\"text\" name=\"source\" value=\"www.ign.gob.ar/2013/img/Mindef_curvas.png\">
+    <input id=\"org\" type=\"text\" name=\"source\" value= $_source>
     <br><br>
 
 	<fieldset>
@@ -83,7 +84,9 @@ echo "
 			Posición Y:<br>
 			<input type=\"text\" name=\"posY\" value=" . $_str_posY ." >
 			<br>
-		</div>
+			Color: <br>
+			<input type=\"text\" name=\"color\" value=" . $_str_color . ">
+			</div>
 	 </fieldset>
 
     <br><br>

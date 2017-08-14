@@ -25,7 +25,7 @@
   <fieldset>
     <legend>Personal information:</legend>
     Origen:<br>
-    <input id="org" type="text" name="source" value="www.ign.gob.ar/2013/img/Mindef_curvas.png">
+    <input id="org" type="text" name="source" value="http://www.ign.gob.ar/sites/default/files/logo2012blanco.png">
     <br><br>
     Nuevo Ancho:<br>
     <input type="text" name="alto">
@@ -49,6 +49,8 @@
 		<br>
 		Posición Y:<br>
 		<input type="text" name="posY">
+		Color: <br>
+		<input type="text" name="color">
 		<br>
 	</div>
 
