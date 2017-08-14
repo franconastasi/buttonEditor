@@ -68,7 +68,13 @@ switch ($n = count($setting)) {
 
 $thumb = imagecreatetruecolor($img_setting['width'], $img_setting['height']);
 imagesavealpha($thumb, true);
-$trans_colour = imagecolorallocatealpha($thumb, 255, 0, 0, 127);
+if ($img_setting['background'] == "") {
+    $trans_colour = imagecolorallocatealpha($thumb, 0, 0, 0, 127);
+}else{
+    $background_color = hex2RGB( $setting[0]);
+    $trans_colour = imagecolorallocate($thumb,$background_color['red'], $background_color['green'], $background_color['blue']);
+}
+//$trans_colour = ( $img_setting['background'] == "" ?  imagecolorallocatealpha($thumb, 0, 0, 0, 127) : );
 imagefill($thumb, 0, 0, $trans_colour);
 
 //resize

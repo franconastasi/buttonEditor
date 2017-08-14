@@ -5,6 +5,7 @@
 $_source = $_GET['source'];
 $_width =  isset($_GET['alto']) ? $_GET['alto'] : "";
 $_height = isset($_GET['ancho']) ? $_GET['ancho'] : "";
+$_bacground_color = isset($_GET['colorFondo']) ? $_GET['colorFondo'] : "";
 
 $_str = (isset($_GET['texto']) ? $_GET['texto'] : "");
 $_str_size = isset($_GET['tamaño']) ? $_GET['tamaño']: "";
@@ -26,7 +27,7 @@ $_str_color = (isset($_GET['color']) ? $_GET['color'] : "");
 		position: absolute;
 		left: 25%;
 		width: 50%;
-		top: 50%;
+		
 	}
 
 	#org{
@@ -41,7 +42,7 @@ $_str_color = (isset($_GET['color']) ? $_GET['color'] : "");
 <?php
 echo "
 <p style='text-align: center;'>
-<img src='button.php?src=" . $_source . "&s=asdas|" .$_width . "|" . $_height ."&" .
+<img src='button.php?src=" . $_source . "&s=".  $_bacground_color . "|" .$_width . "|" . $_height ."&" .
 "stext=" . $_str .  "|" .  $_str_font . "|" . $_str_size ."|" . $_str_posX . "|" . $_str_posY . "|" . $_str_color .  "'>
 </p>
 
@@ -63,6 +64,10 @@ echo "
 		    <br><br>
 		    Nuevo Alto:<br>
 		    <input type=\"text\" name=\"ancho\" value=" . $_height .">
+		    <br><br>
+		    Color de dfondo:<br>
+		    <input type=\"text\" name=\"colorFondo\" value=" . $_bacground_color . ">
+		    <br><br>
 	</fieldset>
 
 	<br><br>

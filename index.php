@@ -8,7 +8,7 @@
 		position: absolute;
 		left: 25%;
 		width: 50%;
-		top: 50%;
+		top: 15%;
 	}
 
 	#org{
@@ -27,49 +27,51 @@
     Origen:<br>
     <input id="org" type="text" name="source" value="http://www.ign.gob.ar/sites/default/files/logo2012blanco.png">
     <br><br>
-    Nuevo Ancho:<br>
-    <input type="text" name="alto">
-    <br><br>
-    Nuevo Alto:<br>
-    <input type="text" name="ancho">
-    <br><br>
+    
+    <fieldset>
+	    <legend>Tamaño de la imagen:</legend>
+	    Nuevo Ancho:<br>
+	    <input type="text" name="alto">
+	    <br><br>
+	    Nuevo Alto:<br>
+	    <input type="text" name="ancho">
+	    <br><br>
+	    Color de dfondo:<br>
+	    <input type="text" name="colorFondo">
+	    <br><br>
+		
+	</fieldset>
 
-	<div>
-		Texto:<br>
-		<input type="text" name="texto">
-		<br>
-		Tamaño:<br>
-		<input type="text" name="tamaño">
-		<br>
-		Fuente:<br>
-		<input type="text" name="fuente">
-		<br>
-		Posición X:<br>
-		<input type="text" name="posX"> 
-		<br>
-		Posición Y:<br>
-		<input type="text" name="posY">
-		Color: <br>
-		<input type="text" name="color">
-		<br>
-	</div>
+	<br><br>
+
+    <fieldset>
+    	<legend>Texto en la imagen:</legend>
+		<div>
+			Texto:<br>
+			<input type="text" name="texto">
+			<br>
+			Tamaño:<br>
+			<input type="text" name="tamaño">
+			<br>
+			Fuente:<br>
+			<input type="text" name="fuente">
+			<br>
+			Posición X:<br>
+			<input type="text" name="posX"> 
+			<br>
+			Posición Y:<br>
+			<input type="text" name="posY">
+			<br>
+			Color: <br>
+			<input type="text" name="color">
+			<br>
+		</div>
+	</fieldset>
 
     <br><br>
     <input type="submit" value="Submit">
   </fieldset>
 </form>
-
-<!--
-<img src='button.php?src=http://www.ign.gob.ar/2013/img/Mindef_curvas.png'>
-
-<img src="button.php?src=http://www.ign.gob.ar/2013/img/Mindef_curvas.png&s=asdsad|asdas|960|198&stext=Drakaris|./OpenSans-BoldItalic.ttf|20|10|20">
-
-<img src="button.php?s=asdsad|asdas|800|600&stext=Hello World|./OpenSans-BoldItalic.ttf|30|100|200">
-
-<img src="button.php?">
-<img src="button.php?src=logo2012blanco.png">
-
--->
 
 </body>
 </html>
