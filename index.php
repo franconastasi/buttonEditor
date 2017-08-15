@@ -24,9 +24,14 @@
 <form id="mainForm" action="/gdTest/action_page.php">
   <fieldset>
     <legend>Personal information:</legend>
-    Origen:<br>
-    <input id="org" type="text" name="source" value="http://www.ign.gob.ar/sites/default/files/logo2012blanco.png">
-    <br><br>
+     <input type="radio" name="source" value="b1" checked> Botón 1<br>
+	 <input type="radio" name="source" value="b2"> Botón 2<br>
+	 <input type="radio" name="source" value="b3"> Botón 3<br>
+	 <input type="radio" name="source" value="b4"> Botón 4<br>
+	 <input type="radio" name="source" value="otro"> otro
+	 <br>
+
+    
     
     <fieldset>
 	    <legend>Tamaño de la imagen:</legend>

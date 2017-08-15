@@ -2,7 +2,29 @@
 
 
 //$_source = (isset($_GET['source']) ? $_GET['source'] : "www.ign.gob.ar/sites/default/files/logo2012blanco.png");
-$_source = $_GET['source'];
+$_source = "";
+$__source = $_GET['source'];
+
+switch ($__source) {
+	case 'b1':
+		$_source = './buttons_PNG68.png';
+		break;
+	case 'b2':
+		$_source = './buttons_PNG153.png';
+		break;
+	case 'b3':
+		$_source = './button-24843_640.png';
+		break;
+	case 'b4':
+		$_source = './pill_button_blank_yellow.png';
+		break;
+	case 'otro':
+		break;
+	default:
+		# code...
+		break;
+}
+
 $_width =  isset($_GET['alto']) ? $_GET['alto'] : "";
 $_height = isset($_GET['ancho']) ? $_GET['ancho'] : "";
 $_bacground_color = isset($_GET['colorFondo']) ? $_GET['colorFondo'] : "";
@@ -26,8 +48,7 @@ $_str_color = (isset($_GET['color']) ? $_GET['color'] : "");
 	#mainForm{
 		position: absolute;
 		left: 25%;
-		width: 50%;
-		
+		width: 50%;	
 	}
 
 	#org{
@@ -53,9 +74,12 @@ echo "
 <form id= \"mainForm\" action=\"/gdTest/action_page.php\">
   <fieldset>
     <legend>Personal information:</legend>
-    Origen:<br>
-    <input id=\"org\" type=\"text\" name=\"source\" value= $_source>
-    <br><br>
+    <input type=\"radio\" name=\"source\" value=\"b1\" checked> Botón 1<br>
+	 <input type=\"radio\" name=\"source\" value=\"b2\"> Botón 2<br>
+	 <input type=\"radio\" name=\"source\" value=\"b3\"> Botón 3<br>
+	 <input type=\"radio\" name=\"source\" value=\"b4\"> Botón 4<br>
+	 <input type=\"radio\" name=\"source\" value=\"otro\"> otro
+	 <br>
 
 	<fieldset>
 	    <legend>Tamaño de la imagen:</legend>
