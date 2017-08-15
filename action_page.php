@@ -59,39 +59,67 @@ echo "
 
 	<fieldset>
 	    <legend>Tamaño de la imagen:</legend>
-		    Nuevo Ancho:<br>
-		    <input type=\"text\" name=\"alto\" value=" . $_width .">
-		    <br><br>
-		    Nuevo Alto:<br>
-		    <input type=\"text\" name=\"ancho\" value=" . $_height .">
-		    <br><br>
-		    Color de dfondo:<br>
-		    <input type=\"text\" name=\"colorFondo\" value=" . $_bacground_color . ">
-		    <br><br>
+		    <table style=\"width:100%\">
+	    	<tr>
+	    		<th>
+	    			Nuevo Ancho:<br>
+	 				<input type=\"text\" name=\"alto\">
+	    		</th>
+
+	    		<th>
+	    			Nuevo Alto:<br>
+	    			<input type=\"text\" name=\"ancho\">
+
+	    		</th>
+
+	    		<th>
+	    			Color de dfondo:<br>
+	   				<input type=\"text\" name=\"colorFondo\">
+	    		</th>
+	    	</tr>
+	    </table>
 	</fieldset>
 
 	<br><br>
 	<fieldset>
 		<legend>Texto en la imagen:</legend>
 		<div>
-			Texto:<br>
-			<input type=\"text\" name=\"texto\" value=" . $_str . ">
-			<br>
-			Tamaño:<br>
-			<input type=\"text\" name=\"tamaño\" value=" . $_str_size .">
-			<br>
-			Fuente:<br>
-			<input type=\"text\" name=\"fuente\" value=" . $_str_font .">
-			<br>
-			Posición X:<br>
-			<input  type=\"text\" name=\"posX\" value=" . $_str_posX .">
-			<br>
-			Posición Y:<br>
-			<input type=\"text\" name=\"posY\" value=" . $_str_posY ." >
-			<br>
-			Color: <br>
-			<input type=\"text\" name=\"color\" value=" . $_str_color . ">
-			</div>
+			<table style=\"width:100%\">
+				<tr>
+					<th>
+						Texto:<br>
+						<input type=\"text\" name=\"texto\">
+					</th>
+					<th>
+						Tamaño:<br>
+						<input type=\"text\" name=\"tamaño\">
+					</th>
+				</tr>
+
+				<tr>
+					<th>
+						Color: <br>
+						<input type=\"text\" name=\"color\">
+					</th>
+
+					<th>
+						Fuente:<br>
+						<input type=\"text\" name=\"fuente\">	
+					</th>
+				</tr>
+
+				<tr>
+					<th>
+						Posición X:<br>
+						<input type=\"text\" name=\"posX\"> 
+					</th>
+
+					<th>
+						Posición Y:<br>
+						<input type=\"text\" name=\"posY\">		
+					</th>
+				</tr>
+			</table>
 	 </fieldset>
 
     <br><br>

@@ -30,16 +30,26 @@
     
     <fieldset>
 	    <legend>Tamaño de la imagen:</legend>
-	    Nuevo Ancho:<br>
-	    <input type="text" name="alto">
-	    <br><br>
-	    Nuevo Alto:<br>
-	    <input type="text" name="ancho">
-	    <br><br>
-	    Color de dfondo:<br>
-	    <input type="text" name="colorFondo">
-	    <br><br>
-		
+	    <table style="width:100%">
+	    	<tr>
+	    		<th>
+	    			Nuevo Ancho:<br>
+	 				<input type="text" name="alto">
+	    		</th>
+
+	    		<th>
+	    			Nuevo Alto:<br>
+	    			<input type="text" name="ancho">
+
+	    		</th>
+
+	    		<th>
+	    			Color de dfondo:<br>
+	   				<input type="text" name="colorFondo">
+	    		</th>
+	    	</tr>
+	    	
+	    </table>		
 	</fieldset>
 
 	<br><br>
@@ -47,25 +57,43 @@
     <fieldset>
     	<legend>Texto en la imagen:</legend>
 		<div>
-			Texto:<br>
-			<input type="text" name="texto">
-			<br>
-			Tamaño:<br>
-			<input type="text" name="tamaño">
-			<br>
-			Fuente:<br>
-			<input type="text" name="fuente">
-			<br>
-			Posición X:<br>
-			<input type="text" name="posX"> 
-			<br>
-			Posición Y:<br>
-			<input type="text" name="posY">
-			<br>
-			Color: <br>
-			<input type="text" name="color">
-			<br>
-		</div>
+			<table style="width:100%">
+				<tr>
+					<th>
+						Texto:<br>
+						<input type="text" name="texto">
+					</th>
+					<th>
+						Tamaño:<br>
+						<input type="text" name="tamaño">
+					</th>
+				</tr>
+
+				<tr>
+					<th>
+						Color: <br>
+						<input type="text" name="color">
+					</th>
+
+					<th>
+						Fuente:<br>
+						<input type="text" name="fuente">	
+					</th>
+				</tr>
+
+				<tr>
+					<th>
+						Posición X:<br>
+						<input type="text" name="posX"> 
+					</th>
+
+					<th>
+						Posición Y:<br>
+						<input type="text" name="posY">		
+					</th>
+				</tr>
+			</table>
+			</div>
 	</fieldset>
 
     <br><br>
