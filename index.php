@@ -3,6 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 
+<script>
+function ShowHideDiv() {
+    var chkYes = document.getElementById("chkYes");
+    var dvtext = document.getElementById("dvtext");
+    dvtext.style.display = chkYes.checked ? "block" : "none";
+}
+</script>
+
 <style type="text/css">
 	#mainForm{
 		position: absolute;
@@ -28,7 +36,8 @@
 	 <input type="radio" name="source" value="b2"> Botón 2<br>
 	 <input type="radio" name="source" value="b3"> Botón 3<br>
 	 <input type="radio" name="source" value="b4"> Botón 4<br>
-	 <input type="radio" name="source" value="otro"> otro
+	 <input id="chkYes" type="radio" name="source" value="otro" onclick="ShowHideDiv()"> otro
+	 <input id="dvtext" style="display: none; width:70%" type ="text" name="source_other"> <br>
 	 <br>
 
     
